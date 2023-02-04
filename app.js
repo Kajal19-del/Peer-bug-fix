@@ -11,7 +11,7 @@ function toggleMenu() {
     menuIcon.style.display = 'block';
   } else {
     menu.classList.add('showMenu');
-    closeIcon.setAttribute('style', 'display: block !important');
+    closeIcon.setAttribute('style', 'display:');
     menuIcon.style.display = 'none';
   }
 }
@@ -237,10 +237,11 @@ inputList.push(document.getElementById('text-area'));
 inputList.forEach((value) => {
   value.onchange = function trig() {
     populateDatas();
+    console.log(populateDatas());
   };
 });
 
-if (!localStorage.getItem('form-data')) {
+if (localStorage.getItem('form-data')) {
   populateDatas();
 } else {
   fillDatas();
